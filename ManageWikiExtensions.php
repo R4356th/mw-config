@@ -2944,6 +2944,75 @@ $wgManageWikiExtensions = [
 		],
 		'section' => 'other',
 	],
+	'wikidatapagebanner' => [
+		'name' => 'WikidataPageBanner',
+		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikidataPageBanner',
+		'var' => 'wmgUseWikidataPageBanner',
+		'conflicts' => false,
+		'requires' => [],
+		'section' => 'other',
+	],
+	'wikiforum' => [
+		'name' => 'WikiForum',
+		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikiForum',
+		'var' => 'wmgUseWikiForum',
+		'conflicts' => false,
+		'requires' => [],
+		'install' => [
+			'sql' => [
+				'wikiforum_forums' => "$IP/extensions/WikiForum/sql/wikiforum.sql"
+			],
+			'permissions' => [
+				'bureaucrat' => [
+					'addgroups' => [
+						'forumadmin',
+					],
+					'removegroups' => [
+						'forumadmin',
+					],
+				],
+				'forumadmin' => [
+					'permissions' => [
+						'wikiforum-admin',
+						'wikiforum-moderator',
+					],
+				],
+				'sysop' => [
+					'permissions' => [
+						'wikiforum-admin',
+						'wikiforum-moderator',
+					],
+				],
+			],
+		],
+		'section' => 'other',
+	],
+	'wikilove' => [
+		'name' => 'WikiLove',
+		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikiLove',
+		'var' => 'wmgUseWikiLove',
+		'conflicts' => false,
+		'requires' => [],
+		'install' => [
+			'sql' => [
+				'wikilove_log' => "$IP/extensions/WikiLove/patches/tables-generated.sql"
+			],
+		],
+		'section' => 'other',
+	],
+	'wikimediaincubator' => [
+		'name' => 'WikimediaIncubator',
+		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikimediaIncubator',
+		'var' => 'wmgUseWikimediaIncubator',
+		'conflicts' => false,
+		'requires' => [
+			'permissions' => [
+				'managewiki-restricted',
+			],
+		],
+		'section' => 'other',
+	],
+	// Wikibase
 	'wikibaseclient' => [
 		'name' => 'Wikibase (Client)',
 		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Wikibase_Client',
@@ -2964,7 +3033,7 @@ $wgManageWikiExtensions = [
 					"$IP/extensions/MirahezeMagic/maintenance/populateWikibaseSitesTable.php" => [],
 			],
 		],
-		'section' => 'other',
+		'section' => 'wikibase',
 	],
 	'wikibaserepository' => [
 		'name' => 'Wikibase (Repository)',
@@ -3053,7 +3122,7 @@ $wgManageWikiExtensions = [
 				'wmgWikibasePropertyNamespaceID' => 120
 			]
 		],
-		'section' => 'other',
+		'section' => 'wikibase',
 	],
 	'wikibaselexeme' => [
 		'name' => 'WikibaseLexeme',
@@ -3066,7 +3135,7 @@ $wgManageWikiExtensions = [
 				'universallanguageselector',
 			],	
 		],
-		'section' => 'other',
+		'section' => 'wikibase',
 	],
 	'wikibaselocalmedia' => [
 		'name' => 'WikibaseLocalMedia',
@@ -3078,7 +3147,7 @@ $wgManageWikiExtensions = [
 				'wikibaserepository',
 			],	
 		],
-		'section' => 'other',
+		'section' => 'wikibase',
 	],
 	'wikibasequalityconstraints' => [
 		'name' => 'WikibaseQualityConstraints',
@@ -3095,74 +3164,6 @@ $wgManageWikiExtensions = [
 				'wbqc_constraints' => "$IP/extensions/WikibaseQualityConstraints/sql/mysql/tables-generated.sql",
 			],
 		],
-		'section' => 'other',
-	],
-	'wikidatapagebanner' => [
-		'name' => 'WikidataPageBanner',
-		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikidataPageBanner',
-		'var' => 'wmgUseWikidataPageBanner',
-		'conflicts' => false,
-		'requires' => [],
-		'section' => 'other',
-	],
-	'wikiforum' => [
-		'name' => 'WikiForum',
-		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikiForum',
-		'var' => 'wmgUseWikiForum',
-		'conflicts' => false,
-		'requires' => [],
-		'install' => [
-			'sql' => [
-				'wikiforum_forums' => "$IP/extensions/WikiForum/sql/wikiforum.sql"
-			],
-			'permissions' => [
-				'bureaucrat' => [
-					'addgroups' => [
-						'forumadmin',
-					],
-					'removegroups' => [
-						'forumadmin',
-					],
-				],
-				'forumadmin' => [
-					'permissions' => [
-						'wikiforum-admin',
-						'wikiforum-moderator',
-					],
-				],
-				'sysop' => [
-					'permissions' => [
-						'wikiforum-admin',
-						'wikiforum-moderator',
-					],
-				],
-			],
-		],
-		'section' => 'other',
-	],
-	'wikilove' => [
-		'name' => 'WikiLove',
-		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikiLove',
-		'var' => 'wmgUseWikiLove',
-		'conflicts' => false,
-		'requires' => [],
-		'install' => [
-			'sql' => [
-				'wikilove_log' => "$IP/extensions/WikiLove/patches/tables-generated.sql"
-			],
-		],
-		'section' => 'other',
-	],
-	'wikimediaincubator' => [
-		'name' => 'WikimediaIncubator',
-		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:WikimediaIncubator',
-		'var' => 'wmgUseWikimediaIncubator',
-		'conflicts' => false,
-		'requires' => [
-			'permissions' => [
-				'managewiki-restricted',
-			],
-		],
-		'section' => 'other',
+		'section' => 'wikibase',
 	],
 ];
