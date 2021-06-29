@@ -1262,6 +1262,9 @@ $wi->config->settings += [
 	'wmgUseEditSubpages' => [
 		'default' => false,
 	],
+	'wmgUseEmbedVideo' => [
+		'default' => false,
+	],
 	'wmgUseErudite' => [
 		'default' => false,
 	],
