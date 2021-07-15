@@ -42,6 +42,10 @@ if ( $wmgUseArrays ) {
 	wfLoadExtension( 'Arrays' );
 }
 
+if ( $wmgUseArticlePlaceholder ) {
+	wfLoadExtension( 'ArticlePlaceholder' );
+}
+
 if ( $wmgUseArticleRatings ) {
 	wfLoadExtension( 'ArticleRatings' );
 }
