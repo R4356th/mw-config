@@ -1969,6 +1969,14 @@ $wgManageWikiExtensions = [
 		'requires' => [],
 		'section' => 'other',
 	],
+	'articleplaceholder' => [
+		'name' => 'ArticlePlaceholder',
+		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ArticlePlaceholder',
+		'var' => 'wmgUseArticlePlaceholder',
+		'conflicts' => false,
+		'requires' => [],
+		'section' => 'other',
+	],
 	'articleratings' => [
 		'name' => 'Article Ratings',
 		'linkPage' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ArticleRatings',
