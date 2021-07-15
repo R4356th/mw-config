@@ -1102,7 +1102,7 @@ $wi->config->settings += [
 	'wmgUseArrays' => [
 		'default' => false,
 	],
-	'wmgUseArticlePlaceholder' -> [
+	'wmgUseArticlePlaceholder' => [
 		'default' => false,
 	],
 	'wmgUseArticleRatings' => [
