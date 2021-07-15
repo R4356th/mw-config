@@ -2764,7 +2764,34 @@ $wgManageWikiSettings = [
 		'section' => 'wikibase',
 		'help' => 'Namespace ID of the Property namespace for Wikibase Repository.',
 		'requires' => [],
-	]
+	],
+	'wgArticlePlaceholderImageProperty' => [
+		'name' => 'ArticlePlaceholder Image Property',
+		'from' => 'articleplaceholder',
+		'type' => 'text',
+		'overridedefault' => 'P18',
+		'section' => 'wikibase',
+		'help' => 'ID of the Wikibase property that should be used for images by ArticlePlaceholder',
+		'requires' => [],
+	],
+	'wgArticlePlaceholderReferencesBlacklist' => [
+		'name' => 'ArticlePlaceholder References Blacklist',
+		'from' => 'articleplaceholder',
+		'type' => 'text',
+		'overridedefault' => false,
+		'section' => 'wikibase',
+		'help' => 'ID of the Wikibase property that should be disallowed by ArticlePlaceholder',
+		'requires' => [],
+	],
+	'ArticlePlaceholderSearchEngineIndexed' => [
+		'name' => 'ArticlePlaceholder Search Engine Policy',
+		'from' => 'articleplaceholder',
+		'type' => 'text',
+		'overridedefault' => false,
+		'section' => 'wikibase',
+		'help' => 'ID of the Wikibase property that should be disallowed by ArticlePlaceholder',
+		'requires' => [],
+	],
 ];
 
 if ( $wmgUseGamepress && $wmgUseTheme ) {
